@@ -6,9 +6,6 @@
 
 .idea
 
-# production
-/dist
-
 # misc
 npm-debug.log*
 yarn-debug.log*
