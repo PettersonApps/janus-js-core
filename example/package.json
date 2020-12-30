@@ -8,9 +8,9 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-janus-live-stream": "link:..",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4",
-    "react-janus-live-stream": "link: .."
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
   }
 }

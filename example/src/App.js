@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import {} from 'react-janus-live-stream'
+import React from 'react';
+import { StreamStoreProvider } from './store';
+import { StreamPublisher, StreamSubscriber, StreamWrapper } from './components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StreamStoreProvider>
+      <div className="container">
+        <StreamWrapper>
+          <div className="stream-publisher">
+            <h4>Publisher</h4>
+            <StreamPublisher />
+          </div>
+          <hr />
+          <div className="stream-subscriber mt-16">
+            <h4>Subscriber</h4>
+            <StreamSubscriber />
+          </div>
+        </StreamWrapper>
+      </div>
+    </StreamStoreProvider>
   );
 }
 
