@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Janus, { publishToRoom, subscribeRemoteFeed } from 'react-janus-live-stream';
+import Janus, { publishToRoom, subscribeRemoteFeed } from 'janus-js-core';
 import StreamStatus from './StreamStatus';
 import Chat from './Chat';
 import { useStreamContext } from '../store';

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useStreamContext } from '../store';
-import Janus from 'react-janus-live-stream';
+import Janus from 'janus-js-core';
 import { setJanusInstance } from '../store/actions';
 import Loader from './Loader';
 

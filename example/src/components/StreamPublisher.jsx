@@ -4,7 +4,7 @@ import StreamStatus from './StreamStatus';
 import Chat from './Chat';
 import { useStreamContext } from '../store';
 
-import Janus, { publishToRoom, unPublishOwnFeed, publishOwnFeed } from 'react-janus-live-stream';
+import Janus, { publishToRoom, unPublishOwnFeed, publishOwnFeed } from 'janus-js-core';
 import { setStreamState } from '../store/actions';
 
 const StreamPublisher = () => {

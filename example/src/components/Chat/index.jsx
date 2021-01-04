@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Janus, { publishChatroom, sendChatroomData } from 'react-janus-live-stream';
+import Janus, { publishChatroom, sendChatroomData } from 'janus-js-core';
 import Messages from './Messages';
 import Form from './Form';
 import { setStreamState } from '../../store/actions';
