@@ -1,10 +1,14 @@
 {
   "name": "janus-js-core",
   "version": "0.0.1",
+  "private": false,
   "author": "Yaroslav Maydich <yaroslav.maydich@pettersonapps.com>",
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": "pettersonapps/janus-js-core",
+  "homepage": "https://github.com/PettersonApps/janus-js-core",
+  "description": "janus.js file with types and videoroom and chatroom helpers",
   "files": [
     "dist/index.js",
     "dist/index.d.ts"
