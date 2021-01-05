@@ -27,6 +27,8 @@ const Chat = (props) => {
   };
 
   useEffect(() => {
+    // creating or connecting to chatroom
+    // id of connected users should be unique, if they repeat one of opened chats will not work
     publishChatroom({
       janus: state.janusInstance,
       opaqueId: isPublisher ? 'user.id' : Janus.randomString(12),

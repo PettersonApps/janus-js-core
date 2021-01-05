@@ -7,7 +7,7 @@ import { useStreamContext } from '../store';
 const StreamSubscriber = () => {
   const { state } = useStreamContext();
 
-  const $video = useRef(null);
+  const $video = useRef(null); // ref to video element for media stream
 
   const [playerStatus, setPlayerStatus] = useState('ready');
 
@@ -27,6 +27,7 @@ const StreamSubscriber = () => {
       }
     } else if (eventType === 'oncleanup') {
       setPlayerStatus('stop');
+      // use in production mode, will cause problem when publisher and viewer in one page like in demo
       // state.janusInstance.destroy();
     } else if (eventType === 'error') {
       setPlayerStatus('error');
@@ -88,6 +89,7 @@ const StreamSubscriber = () => {
       return;
     }
 
+    // connecting to existing videoroom
     publishToRoom({
       janus: state.janusInstance,
       opaqueId: state.opaqueId,

@@ -11,6 +11,7 @@ const StreamWrapper = ({ children }) => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  // initialize janus func
   const handleJanusInit = useCallback(() => {
     Janus.init({
       debug: false,
@@ -20,7 +21,7 @@ const StreamWrapper = ({ children }) => {
         }
 
         const janus = new Janus({
-          server: process.env.REACT_APP_LIVE_STREAM_API_URL,
+          server: process.env.REACT_APP_LIVE_STREAM_API_URL, // server url
           token: state.streamToken,
           iceServers: [
             {
@@ -30,7 +31,7 @@ const StreamWrapper = ({ children }) => {
             },
           ],
           success() {
-            dispatch(setJanusInstance(janus));
+            dispatch(setJanusInstance(janus)); // set janus to store for future usage
 
             setIsLoading(false);
           },
@@ -51,6 +52,7 @@ const StreamWrapper = ({ children }) => {
     });
   }, [dispatch, state.streamToken]);
 
+  // init janus
   useEffect(() => {
     if (state.streamToken) {
       handleJanusInit();

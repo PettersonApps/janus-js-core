@@ -10,7 +10,7 @@ import { setStreamState } from '../store/actions';
 const StreamPublisher = () => {
   const { state, dispatch } = useStreamContext();
 
-  const $video = useRef(null);
+  const $video = useRef(null); // ref to video element for media stream
 
   const [playerStatus, setPlayerStatus] = useState('ready');
 
@@ -78,6 +78,7 @@ const StreamPublisher = () => {
         }
         case 'oncleanup': {
           setPlayerStatus('stop');
+          // use in production mode, will cause problem when publisher and viewer in one page like in demo
           // state.janusInstance.destroy();
           setIsMuted(false);
 
@@ -97,6 +98,7 @@ const StreamPublisher = () => {
 
   useEffect(() => {
     if (state.janusInstance)
+      // creating videoroom
       publishToRoom({
         janus: state.janusInstance,
         opaqueId: 'user.id',
