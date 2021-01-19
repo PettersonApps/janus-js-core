@@ -1,4 +1,4 @@
-import { JanusJS } from "../../index";
+import { JanusJS } from "../index";
 
 export function publishToRoom({
   janus,
@@ -8,7 +8,8 @@ export function publishToRoom({
   pin,
   username,
   isPublisher,
-  callback,
+  rec_dir,
+  callback
 }: {
   janus: JanusJS.Janus;
   opaqueId: string;
@@ -17,15 +18,20 @@ export function publishToRoom({
   pin?: boolean;
   username: string;
   isPublisher: boolean;
+  rec_dir?: string;
   callback: (plugin: JanusJS.PluginHandle, event: string, data: any) => void;
 }): any;
 
 export function publishOwnFeed({
   sfutest,
   useAudio,
+  record,
+  filename
 }: {
   sfutest: JanusJS.PluginHandle;
   useAudio: boolean;
+  record?: boolean;
+  filename?: string;
 }): void;
 
 export function unPublishOwnFeed(sfutest: JanusJS.PluginHandle): void;

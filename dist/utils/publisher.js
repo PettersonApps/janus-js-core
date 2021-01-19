@@ -9,6 +9,7 @@ export function publishToRoom({
   username,
   isPublisher,
   callback,
+  rec_dir
 }) {
   let sfutest = null;
   let mystream = null;
@@ -30,6 +31,7 @@ export function publishToRoom({
           room,
           secret,
           pin,
+          rec_dir
         };
         // send message to create new room
         sfutest.send({
@@ -147,7 +149,7 @@ export function publishToRoom({
   return sfutest;
 }
 
-export function publishOwnFeed({sfutest, useAudio}) {
+export function publishOwnFeed({sfutest, useAudio, record, filename}) {
   // Publish our stream
   sfutest.createOffer({
     // Add data:true here if you want to publish datachannels as well
@@ -163,6 +165,8 @@ export function publishOwnFeed({sfutest, useAudio}) {
         video: true,
         audiocodec: 'opus',
         videocodec: 'vp8',
+        record,
+        filename
       };
       sfutest.send({ message: publish, jsep });
     },

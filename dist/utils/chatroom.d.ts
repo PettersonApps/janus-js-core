@@ -1,4 +1,4 @@
-import { JanusJS } from "../../index";
+import { JanusJS } from "../index";
 
 export function publishChatroom({
   janus,

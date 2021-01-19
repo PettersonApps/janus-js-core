@@ -108,6 +108,7 @@ const StreamPublisher = () => {
         username: 'user.nickname',
         isPublisher: true,
         callback: handlePublishToRoomCallback,
+        rec_dir: '/recordings'
       });
   }, [handlePublishToRoomCallback, state.janusInstance]);
 

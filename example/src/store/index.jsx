@@ -8,7 +8,7 @@ const initialState = {
   pubId: 0,
   pubPvtId: 0,
   room: 0,
-  streamToken: 'd0e267603026c5798b94ce5c32ced550aa0c13e2',
+  streamToken: "db72b31652cf2104bccd13a8dfb37df1b9fe4693",
 };
 
 export const StreamContext = createContext({
